@@ -1,0 +1,21 @@
+<% content_for :header do -%>
+	Announcements
+<% end -%>
+
+<div class="in">
+  <b>Headline:</b>
+  <%=h @announcement.headline %>
+
+  <b>Message:</b>
+  <%=h @announcement.message %>
+
+  <b>Starts at:</b>
+  <%=h @announcement.starts_at %>
+
+  <b>Ends at:</b>
+  <%=h @announcement.ends_at %>
+</div>
+
+
+<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<%= link_to 'Back', announcements_path %>

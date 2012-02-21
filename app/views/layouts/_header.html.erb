@@ -1,0 +1,48 @@
+
+
+<%= javascript_include_tag 'defaults' %>
+<%= javascript_include_tag 'jquery.min','jquery-ui-1.8.5.custom.min','simplegallery' %>
+
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  	 jQuery("#tabs").tabs();
+});
+</script>  
+<%= stylesheet_link_tag 'reset','style' %>
+
+
+<!--[if IE]>
+<link href="css/style-ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+<body>
+<!--**************************************main-wrapper******************************************************-->
+
+<div id="main-wrapper" class="round-corners round-corners-top">
+    <!--***********************************wrapper***********************************************-->
+	<div id="wrapper">
+		<!--***************************header******************************-->
+        <div id="header" class="round-corners">
+        	<!--**************************-->
+        	<div id="logo">
+            	<a href="#"><img src="images/logo.png" title="View Home Page" alt="Home"/></a>	
+            </div><!-- logo -->
+           <!--**************************-->
+            <div id="menu" class="round-corners menu">
+            	<ul>
+                    <li id="home"><a href="#">home<img src="images/home.png" alt="Image" /></a></li>
+                    <li id="about"><a href="#">about<img src="images/about.png" alt="Image" /></a></li>
+                    <li id="product"><a href="#">services<img src="images/products.png" alt="Image" /></a></li>
+                    <li id="testi"><a href="#">testimonials<img src="images/testimonial.png" alt="Image" /></a></li>
+                    <li id="contact"><a href="#">contact<img src="images/contact.png" alt="Image" /></a></li>
+                    <li id="faq" class="no-border"><a href="#">FAQ<img src="images/faq.png" alt="Image" /></a></li>
+                </ul>
+            
+            </div><!-- menu -->
+		</div><!-- header -->
+   
+		
+        <!--********************************middle*****************************************-->
+        <div id="middle">

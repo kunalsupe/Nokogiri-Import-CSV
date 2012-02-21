@@ -1,0 +1,30 @@
+<% content_for :header do -%>
+	Announcements
+<% end -%>
+
+<% form_for(@announcement) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :headline %><br />
+    <%= f.text_field :headline %>
+  </p>
+  <p>
+    <%= f.label :message %><br />
+    <%= f.text_area :message %>
+  </p>
+  <p>
+    <%= f.label :starts_at %><br />
+    <%= f.datetime_select :starts_at %>
+  </p>
+  <p>
+    <%= f.label :ends_at %><br />
+    <%= f.datetime_select :ends_at %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @announcement %> |
+<%= link_to 'Back', announcements_path %>

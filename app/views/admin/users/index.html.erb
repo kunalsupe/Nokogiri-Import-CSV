@@ -1,0 +1,46 @@
+<% content_for :header do -%>
+	<h2 class="in"><%= configatron.site_name %> Users</h2>
+<% end -%>
+
+<div class="in">			
+	<table width="850" border="0" cellspacing="0" cellpadding="10" class="table_main" >
+  <tr>
+	<th>ID</th>
+	<th>Login</th>
+	<th>Email</th>
+	<th>Status</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+	<td><%=h user.id %></td>
+	<td><%= link_to h(user.login), admin_user_url(user) %></td>
+	<td><%=h user.email %></td>
+	<td><%=h user.state %></td>
+    <td class="actions">
+		<% if user.pending? %>
+			<%= link_to 'activate', activate_admin_user_url(user), :method => :put %>
+			<%= link_to 'suspend', suspend_admin_user_url(user), :method => :put %>
+			<%= link_to 'delete', admin_user_url(user), :method => :delete, :confirm => "Are you sure?" %>
+		<% elsif user.passive? %>
+			<%= link_to 'activate', activate_admin_user_url(user), :method => :put %>
+			<%= link_to 'suspend', suspend_admin_user_url(user), :method => :put %>
+			<%= link_to 'delete', admin_user_url(user), :method => :delete, :confirm => "Are you sure?" %>
+		<% elsif user.active? %>
+			<%= link_to 'suspend', suspend_admin_user_url(user), :method => :put %>
+			<%= link_to 'delete', admin_user_url(user), :method => :delete, :confirm => "Are you sure?" %>
+		<% elsif user.suspended? %>
+			<%= link_to 'unsuspend', unsuspend_admin_user_url(user), :method => :put %>
+			<%= link_to 'delete', admin_user_url(user), :method => :delete, :confirm => "Are you sure?" %>		
+		<% end %>
+	</td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<%= will_paginate @users %>
+
+<p>
+	<%= link_to 'New user', new_admin_user_path %>
+</p>

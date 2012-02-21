@@ -1,0 +1,19 @@
+13-06-2010 - Danny McClelland
+================================================================================
+ * Moved all updates to BaseApp2 Repo
+
+12-06-2010 - Danny McClelland
+================================================================================
+ * Added Mobile version and auto detection
+
+09-06-2010 - Danny McClelland
+================================================================================
+ * Updated to work with Rails 2.3.8
+ * Removed OpenID function for compatibility reasons
+
+24-02-2008 - ariejan
+================================================================================
+ * Created initial base_app project
+ * Added restful_authentication with activation
+ * Added profiles
+ * Created default layout

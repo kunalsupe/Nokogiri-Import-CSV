@@ -1,0 +1,28 @@
+
+<h1>Listing ratesheets</h1>
+
+<table>
+  <tr>
+    <th>Prefix</th>
+    <th>City</th>
+    <th>Rate</th>
+    <th>Country</th>
+  </tr>
+
+<% @ratesheets.each do |ratesheet| %>
+  <tr>
+    <td><%=h ratesheet.prefix %></td>
+    <td><%=h ratesheet.city %></td>
+    <td><%=h ratesheet.rate %></td>
+    <td><%=h ratesheet.country_id %></td>
+    <td><%= link_to 'Show', ratesheet %></td>
+    <td><%= link_to 'Edit', edit_ratesheet_path(ratesheet) %></td>
+    <td><%= link_to 'Destroy', ratesheet, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ratesheet', new_ratesheet_path %>  
+   

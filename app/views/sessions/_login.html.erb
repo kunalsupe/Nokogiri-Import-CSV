@@ -1,0 +1,57 @@
+
+<% form_for :session,  :url => sessions_path do |f| %>
+		  					<table width="200" border="0" align="center" cellpadding="3px">
+							  <!--Here we can use email ID or Password we need to change :username by :email if we wish to use Email id for login purpose -->
+							  <tr>
+							  	<td>
+              							<div id="login-lookup-dist">
+              								<p><span><%= alert %><%= notice %></span></p>
+              							</div>
+              					</td>
+              				 	</tr>
+							  <tr>
+		                            <td class="email-pass"><div align="left">User Name/Email:</div></td>
+		                          </tr>
+		                          <tr>
+		                            <td>
+		                            	<div align="left">
+		                            		<%= f.text_field :email %>
+										</div>
+									</td>
+		                          </tr>
+
+							<tr>
+		                        <td class="email-pass">
+		                        	<div align="left">Password:</div>
+		                        </td>
+		                          </tr>
+		                          <tr>
+		                            <td>
+		                           <div align="left">
+							 			<%= f.password_field :password %>
+							 		</div>
+							 	</td>
+								  </tr>					
+						</table>
+
+						   <div id="login-btn">
+		                    	<table width="129" border="0" cellpadding="3px" style="float:left; margin-top:6px;">
+		                    		
+		                          <tr>
+		                            <td width="15">
+
+
+
+		                              <%= f.check_box :remember_token %>  </td>
+		                            <td width="122" style="color:#b6b6b6; font-size:12px;"><%= f.label :remember_token,'Remember Me' %></td>
+		                          </tr>
+		                          
+		                        </table>	
+
+								
+							  <%= f.submit "s",:class => 'btn_submit'%>
+							  
+							  <p class="forgot-password"></p>
+							<% end %>
+							
+									

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title><%= configatron.site_name %></title>
+
+	<%= stylesheet_link_merged :base %>
+  	<%= javascript_include_merged :base %>
+	<%= stylesheet_link_tag 'mobile' if mobile_device? %>
+  
+</head>
+
+<body>
+
+ 	<div class="wrapper">
+
+			<h1 class="logo"><%= configatron.site_name %></h1>
+			<p class="txt_right"><%= render :partial => 'shared/global_links' %></p>
+
+		<!-- Navigation -->
+
+			<div class="navigation">
+					<ul>
+						<%= render :partial => 'admin/shared/tabs' %>
+					</ul>
+
+					<div id="searchform">
+						<form method="get" action="">
+						<input type="text" value="Search..." class="search_box" name="search" onclick="this.value='';"  />
+						<input type="submit" class="search_btn" value="SEARCH" />
+						</form>
+					</div>
+
+			</div>
+
+			<div class="clear"></div>
+
+
+			<div class="content">
+
+      	
+	<%= render :partial => "shared/announcements" unless announcements_for_display.empty? -%>
+	<%= flash_message %>
+
+    <h2 class="head"><%= yield_or_default yield(:header), "Use 'content_for :header do; end' in your view to set this title" %></h2>
+
+    <%= yield %>
+
+	</div>
+
+    <!-- <%= yield_or_default(yield(:sidebar)) %> -->
+    	<p class="footer"><a href="#">ADVANCED  SEARCH</a> <span class="v_line"> |</span> <a href="#">LOGOUT</a></p>		
+	</div>
+</body>
+</html>

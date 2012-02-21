@@ -1,0 +1,256 @@
+<script type="text/javascript">
+
+var mygallery=new simpleGallery({
+ wrapperid: "slider", //ID of main gallery container,
+ dimensions: [947, 462], //width/height of gallery in pixels. Should reflect dimensions of the images exactly
+ imagearray: [
+  ["images/banner1.png", "", "", ""],
+  ["images/banner2.png", "", "", ""],
+   ["images/banner1.png", "", "", ""]
+ ],
+ autoplay: [true, 2500, 2], //[auto_play_boolean, delay_btw_slide_millisec, cycles_before_stopping_int]
+ persist: true,
+ preloadfirst:true, //v1.4 option on whether slideshow should only start after all images have preloaded
+ fadeduration: 500, //transition duration (milliseconds)
+ oninit:function(){ //event that fires when gallery has initialized/ ready to run
+  //Keyword "this": references current gallery instance (ie: try this.navigate("play/pause")
+ },
+ onslide:function(curslide, i){ //event that fires after each slide is shown
+   //Keyword "this": references current gallery instance
+   //curslide: returns DOM reference to current slide's DIV (ie: try alert(curslide.innerHTML)
+   //i: integer reflecting current image within collection being shown (0=1st image, 1=2nd etc)
+ }
+})
+
+</script>
+        
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+        <!--**************************-->
+            <div id="banner">
+			<div id="slider"></div>
+                <!--<div id="slider">
+                	<a href="#"><img src="images/banner1.png" alt="Communicate Globally Easily With Highest Quality" /></a>
+                    <a href="#"><img src="images/banner2.png" alt="Communicate Globally Easily With Highest Quality" /></a>
+                    <a href="#"><img src="images/banner1.png" alt="Communicate Globally Easily With Highest Quality" /></a>
+                </div><!-- slider -->
+               
+                <div class="testimonial">
+                    <h1> Testimonials</h1>
+                    <div class="testi-content">
+                                        
+                        
+                       <div class="text"><p>Salaam man mehrab hastam khily tashakor mikonam az zahmaty ke keshidid lotf kardid ba tashakor mehrab... </p></div>
+                        <div class="clear"></div>
+                     <!--   <p>Like you said moving from one server/provider to another is not an easy task, but you guys did a great job moving my sites over with... </p>-->
+                        <div class="read-more">
+                            <ul>
+                                
+                                <li class="right-border"><a href="#">Read More</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- testi-content -->
+                    
+                    <div class="testi-content top-pad">
+                        
+                        <div class="text"><p> The most important thing that I like about VOIPonTEL is their EasyDialer systems that make you free from dialing too many numbers....</p></div>
+                        <div class="clear"></div>
+                       <!-- <p> easy task, but you guys did a great job moving my sites over with... </p>-->
+                        <div class="read-more">
+                            <ul>
+                                
+                                <li class="right-border"><a href="#">Read More</a></li>
+                            </ul>
+                        </div>
+        
+                    </div><!-- testi-content -->
+					
+					
+                    <div id="view-more-testi">
+                    	<a href="#"><p>View More Testimonials</p></a>
+                        <a href="#"><img src="images/view-more-testi.png" alt="View More" /></a>
+                    	
+                    </div><!-- view-more-testi -->
+                </div><!-- testimonial -->
+                <div id="banner-nav"></div>
+            </div><!-- banner -->
+            
+        	<div id="products-container">
+            	<div id="product-01" class="products">
+                	<h1><img src="images/home-connect.png" alt="Home VoIP Connect" /></h1>
+                	<div class="pro-content">
+                    	<img src="images/product-01.png" alt="Home VoIP Connect" />
+                        <p>HomeVoIPConnect (Home Voice over Internet Protocol Connect) is an unlimited calling plan enabling US residents to make local and long distance calls to a selected list of destinations for a flat monthly fee, and requires high-speed cable or a DSL modem.</p>
+                        <div class="img-pad">
+                        	<a href="#"><img src="images/sign-up.png" alt="Sign Up" border="0" /></a>
+                            <a href="#"><img src="images/learn-more.png" alt="Learn More" border="0" /></a>
+                         </div>
+                    </div>
+                </div><!-- product-01 -->
+                
+            	<div id="product-02" class="products">
+                	<h1><img src="images/access-connect.png" alt="Access Connect" /></h1>
+                	<div class="pro-content">
+                    	<img src="images/product-02.png" alt="Access Connect" /><p>AccessConnect is a pin-less, prepaid long distance telephone service which enables our clients to make long distance calls by dialing our local access number(s), followed by the destination number, without the need of dialing a pin code.</p>
+                        <div class="img-pad">
+                        	<a href="#"><img src="images/sign-up.png" alt="Sign Up" border="0" /></a>
+                            <a href="#"><img src="images/learn-more.png" alt="Learn More" border="0" /></a>
+                        </div>
+                    </div>
+                </div><!-- product-02 -->
+                
+            	<!--<div id="product-03" class="products">
+                	<h1><img src="images/crad-connect.png" alt="Card Connect" /></h1>
+                	<div class="pro-content">
+                    	<img src="images/product-03.png" alt="Card Connect" />
+                        <p> Digital creativity is the new norm classic Residential VoIP service..</p>
+                        <div class="img-pad">
+                        	<a href="#"><img src="images/sign-up.png" alt="Sign Up"  /></a>
+                            <a href="#"><img src="images/learn-more.png" alt="Learn More" /></a>
+                        </div>
+                    </div>
+                </div>--><!-- product-03 -->
+            </div><!-- products-container -->
+            
+            <div id="login-lookup-dist" class="round-corners shadow">
+            	
+            <div id="login" class="float-lft">
+              <h1><img src="images/login.png" class="mar" alt="Login" /> user login</h1>
+                <p> Please enter your<span> Email</span> and <span> Password</span> to log into your account. </p>
+                      <%= render :partial => '/sessions/login' %> 
+                  
+					                  	
+                   	  </div><!-- login-btn -->
+                      <p class="forgot-password"><a href="http://password.voipontel.com/billing/callc/login">Forgot password?</a></p>
+              	
+              </div><!-- login -->
+                
+            	
+              <div id="lookup" class="float-lft">
+                <h1> Rate lookup</h1>
+                <table id="quality">
+                  <tr>
+                    <td class="qlty">Quality</td>
+                    <td><select name="select2" id="select2">
+                      <option>Standard</option>
+                      <option selected="selected">Premium</option>
+                      <option>Economy</option>
+                  
+         
+                    </select></td>
+                  </tr>
+                </table>
+                    	
+                        <table width="281" border="0" cellpadding="3px">
+                          <tr>
+                            <td class="email-pass"><div align="left">Call From:</div></td>
+                            <td>
+                                <div align="center">
+                                  <select name="select" id="select">
+                                    <option>Iran</option>
+                                    <option>United Arab Amirates</option>
+                                    <option>India</option>
+                                    <option>Turkey</option>
+                                    <option>United Kingdom</option>
+                                    <option>Philippines</option>
+                                    <option>Canada</option>
+                                    <option>Sri Lanka</option>
+                                    <option>France</option>
+                                    <option>Sweden</option>
+                                  </select>
+                            </div></td>
+                          </tr>
+                        </table>
+                        <table width="281" border="0" cellpadding="3px">
+                          <tr>
+                            <td width="89" class="email-pass"><div align="left">Call To:</div></td>
+                            <td width="174">
+                                <div align="center">
+                                  <select name="select" id="select1">
+                                    <option>Iran</option>
+                                    <option>United Arab Amirates</option>
+                                    <option>India</option>
+                                    <option>Turkey</option>
+                                    <option>United Kingdom</option>
+                                    <option>Philippines</option>
+                                    <option>Canada</option>
+                                    <option>Sri Lanka</option>
+                                    <option>France</option>
+                                    <option>Sweden</option>
+                                  </select>
+                            </div></td>
+                          </tr>
+                        </table>
+                    
+                        
+                <div id="cities" class="round-corners">
+           		  <h2 class="bg">Cities<span class="mrgn"><input type="text" value="The currency is in USD" /></span></h2>
+                  <div id="usd" style=" overflow:scroll; overflow-y:scroll; overflow-x:hidden; ">
+                	<table>
+                        <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+                        <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+                        <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+                        <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+                        <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+						 <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+						 <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+						 <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+						 <tr>
+                            <td>Tehran</td>
+                            <td>7.9 �</td>
+                        </tr>
+                       
+                      </table>
+                      </div>
+                </div><!-- cities -->
+             
+              </div><!-- lookup -->
+              
+                <div id="destination" class="float-lft">
+                    <h1> 10 Frequently Called Destination</h1>
+                	<p> View the 10 most frequently called places in the past 30 days: </p>
+                    <ul>
+                    	<li id="iran"><a href="#">iran</a></li>
+                        <li id="philippines"><a href="#">philippines</a></li>
+                        <li id="uae" style="font-size:10px;"><a href="#" style="font-size:10px;">united arab emirates</a></li>
+                        <li id="canada"><a href="#">canada</a></li>
+                        <li id="india"><a href="#">india</a></li>
+                        <li id="sri-lanka"><a href="#">sri lanka</a></li>
+                        <li id="turkey"><a href="#">turkey</a></li>
+                        <li id="france"><a href="#">france</a></li>
+                        <li id="united-kingdom"><a href="#">united kingdom</a></li>
+                        <li id="sweden"><a href="#">sweden</a></li>
+                    </ul>
+                    
+                    <div id="note-for-visitors">
+                    	<p>Note*: All rates and information are subject to change without prior notice</p>
+                    </div>
+                
+                </div><!-- destination -->
+                
+            </div><!-- login-lookup-dist -->

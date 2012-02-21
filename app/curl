@@ -1,0 +1,20 @@
+Lets take user_id as '123'
+
+Uniquehash --> 123 + API Secret Key
+ 
+ 
+@c =  Digest::SHA1.hexdigest(hash_string) 
+
+b5fa0190faeebceb8611d341b86aa5892ea4c54f   
+
+http://67.215.224.75/billing/api/user_register?id=b5fa0190faeebceb8611d341b86aa5892ea4c54f&username=demotest&password=demo123&password2=demo123&first_name=demo&last_name=test&country_id=1&email=kunal@kunalinfotech.net&device_type=SIP 
+
+
+Using CURL on Terminal: 
+                                                   
+curl -d "id=b5fa0190faeebceb8611d341b86aa5892ea4c54f&username=demotest&password=demo123&password2=demo123&first_name=demo&last_name=test&country_id=1&email=kunal@kunalinfotech.net&device_type=SIP" http://67.215.224.75/billing/api/user_register?      
+
+
+
+
+  

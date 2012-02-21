@@ -1,0 +1,131 @@
+<!--**************************-->
+    <div id="banner">
+    	<h1><img src="images/registration/registration.png" alt="Registration"/></h1>
+	</div><!-- banner -->
+    
+    <div id="pages-middle" class="round-corners-pages">
+   	  <div id="registration-container" class="pages">
+			<h1>HomeVoIP Connect Registration Information</h1>
+           <!-- <p>Thank you for your interest to become a valuable member of OpenFo Network. By registering now, you will automatically receive a $2 credit to your account for making calls to anywhere around the Globe including U.S.A.</p>-->
+           
+      <div id="left">
+           
+            <div id="contact-form">
+             	
+                   <table>   
+				   
+
+
+                        <tr>
+                            <td width="143"><%= f.label :name,'First Name' %><span style="color:#FF3300">*</span></td>
+                            <td width="395"><%= f.text_field :name %></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><%= f.label :last_name,'Last Name' %><span style="color:#FF3300">*</span></td>
+                            <td><%= f.text_field :last_name %></td>
+                        </tr>
+                        <tr>
+                            <td>Time Zone</td>
+                            <td>
+                            <div id="select-container">
+                             <%= select("user", "timezone_id", Timezone.find(:all).collect {|c| [ c.timezone, c.id ] }, {:selected => 01}) %>
+                            </div>
+                              <label for="select"></label></td>
+                        </tr>
+                        <tr>
+                            <td><%= f.label :email,'Email' %><span style="color:#FF3300">*</span></td>
+                            <td><%= f.text_field :email %></td>
+                        </tr>
+                        <tr>
+                          <td><%= f.label :password,'Password' %><span style="color:#FF3300">*</span></td>
+                          <td><%= f.password_field :password %></td>
+                        </tr>
+                        <tr>
+                          <td><%= f.label :password_confirmation, "Confirmation" %><span style="color:#FF3300">*</span></td>
+                          <td><%= f.password_field :password_confirmation %></td>
+                        </tr>
+                    </table>
+                  
+
+          </div><!-- registration-form -->
+          <div id="register-phone" class="round-corners-reg">
+          	<h2>Register Your Phone:</h2>
+            <p>Only add your personal Phones. You Can add aditional Caller to Your account when you have successfully created your account.</p>
+            <div id="phone">
+                    <img src="images/registration/phone-num.png" alt="Phone Number" width="18" height="16"/>
+                    <span>Phone Number</span>
+                   <span><%= f.text_field :phone_number %></span>                           
+                    
+                    <span>Phone Type:</span>
+                    <label for="select2"></label>
+                      
+                      <%= select("user", "phone_id", Phone.find(:all).collect {|c| [ c.phonetype, c.id ] }, {:selected => 01}) %>
+                   <a href="#"><img src="images/registration/remove-phone-num.png" alt="Remone Phone Number"/></a>
+                   <span class="orng-clr"><a href="#">Remove</a></span>
+			</div><!-- phone -->
+            <div id="add-another-num">
+            	<a href="#"><img src="images/registration/add-phone-num.png" alt="Add another Phone Number" /></a>
+                <span class="orng-clr"><a href="#">Add another phone</a></span>
+            </div><!-- add-another-num -->
+            
+          </div><!-- register-phone -->
+          
+          <div id="referral" class="round-corners-reg">
+                            <h2>Referral</h2>
+                            <p>Have you been referred by anyone?</p>
+                             Yes
+                              <%= f.radio_button  "ref_is_referred", "Yes", :checked => "checked" %>
+                              No
+                             <%= f.radio_button  "ref_is_referred", "No", :checked => "checked" %>
+                              
+    <div style="clear:both;"></div>
+    						<p class="credt">* By naming the person who referred you, he or she will receive $5 credit from VOIPonTEL.</p>
+	<div id="referral-info">
+                            <p>First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                           		<%= f.text_field :ref_first_name %>
+                            <span>Last Name</span>
+                            <%= f.text_field :ref_last_name %>
+                            
+                            <span>Phone Number</span>
+                            <%= f.text_field :ref_phone_number %>
+                            </div>
+                            
+         </div><!-- referral -->
+         
+        </div><!-- left -->
+        
+        <div id="right" class="round-corners-reg">
+        	<h3>Home Address</h3>
+        	
+          <table width="366" height="272" border="1">
+              <tr>
+                <td width="67"><%= f.label :street,'Street' %><span style="color:#FF3300">*</span></td>
+                <td width="283"><%= f.text_field :street %></td>
+              </tr>
+              <tr>
+                <td width="67"><%= f.label :city,'City' %><span style="color:#FF3300">*</span></td>
+                <td width="283"><%= f.text_field :city %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :state,'State' %><span style="color:#FF3300">*</span></td>
+                <td><%= f.text_field :state %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :country,'Country' %><span style="color:#FF3300">*</span></td>
+                <td><%= f.text_field :country %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :zipcode,'Zip Code' %><span style="color:#FF3300">*</span></td>
+                <td><%= f.text_field :zipcode %></td>
+              </tr>
+          </table>
+          
+          <p class="note" style="font-size:12px;">*Note: Address listed in this section must be your Primary
+           resident and where you will recieve phone calls to.  </p>
+        </div><!-- right -->
+         
+        <div id="reg-btn"><%= f.submit "s", :class => "btn_register" %></div>
+            
+   	  </div><!-- registration-container -->
+	</div><!-- pages-middle -->

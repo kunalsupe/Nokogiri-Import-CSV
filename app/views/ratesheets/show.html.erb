@@ -1,0 +1,23 @@
+<p>
+  <b>Prefix:</b>
+  <%=h @ratesheet.prefix %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @ratesheet.city %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%=h @ratesheet.rate %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @ratesheet.country_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_ratesheet_path(@ratesheet) %> |
+<%= link_to 'Back', ratesheets_path %>

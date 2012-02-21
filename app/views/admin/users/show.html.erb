@@ -1,0 +1,23 @@
+<% content_for :header do -%>
+ 	<h3 class="in"><%= configatron.site_name %> Account for <em><%=h @user.login %></em></h3>
+<% end -%>
+
+<div class="in">			
+	<table width="850" border="0" cellspacing="0" cellpadding="10" class="table_main" >
+	<%= cell "Login", "#{in_place_editor_field :user, 'login'}" %>
+	<%= cell "User ID", h(@user.id) %>
+
+	<%= cell_separator %>
+	
+	<%= cell "Email", "#{in_place_editor_field :user, 'email'}" %>
+	<%= cell "Password", "#{"*"*8} <small>#{link_to_if !@user.deleted?, "send new password", reset_password_admin_user_url(@user), :method => :put}</small>" %>
+	
+	<%= cell_separator %>
+	
+	<%= cell "Account created", @user.created_at.to_s(:long) %>
+	<%= cell "Last updated", @user.updated_at.to_s(:long) %>
+</table>
+</div>
+
+<%= link_to 'Edit', edit_admin_user_path(@user) %> |
+<%= link_to 'Back', admin_users_path %>

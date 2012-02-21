@@ -1,0 +1,25 @@
+ 
+
+<h1>New ratesheet</h1>
+
+<% form_for @ratesheet, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+<table">
+   <tr>
+     <td>
+      <label for="dump_file">
+        Select a CSV File :
+      </label>
+     </td>
+     <td >
+       <%= f.file_field :file -%>
+     </td>
+   </tr>
+   
+ </table>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', ratesheets_path %>    
